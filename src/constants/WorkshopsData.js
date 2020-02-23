@@ -6,3 +6,4 @@ export const WorkshopsDataText = {
   Swimming:
     'We’re not saying you’re training the next Michael Phelps (but hey, you never know!). Exposing baby to the pool now gives her plenty of time to get acclimated to water, plus it’s a great chance to bond. Try your local YMCA for classes specially designed for babies.'
 };
+export default WorkshopsDataText;
