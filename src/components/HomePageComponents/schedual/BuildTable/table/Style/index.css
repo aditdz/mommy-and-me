@@ -1,0 +1,15 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  padding: 5px;
+}
+.cor {
+  display: flex;
+  flex-flow: column;
+  align-self: center;
+}

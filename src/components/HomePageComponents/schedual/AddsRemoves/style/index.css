@@ -1,0 +1,10 @@
+.SchedualCons {
+  width: 30%;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  align-items: center;
+  padding: 10px 0;
+  background-color: turquoise;
+  font-size: 1.5vw;
+}

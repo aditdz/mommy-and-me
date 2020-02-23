@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.button1 {
+  background-color: rgb(76, 172, 175);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button1:hover {
+  background-color: #456ca0;
+}
+
+.container {
+  width: 40%;
+  border-radius: 5px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-25 {
+  float: left;
+  margin-top: 6px;
+  width: 25%;
+}
+
+.col-75 {
+  float: left;
+  margin-top: 6px;
+  width: 75%;
+}
+.button2 {
+  background-color: rgb(42, 54, 165);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .col-25,
+  .col-75,
+  .button1 .button2 {
+    width: 100%;
+    margin-top: 0;
+  }
+}

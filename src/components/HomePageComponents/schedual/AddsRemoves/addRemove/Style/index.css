@@ -1,0 +1,19 @@
+.SchedualCon {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  text-align: center;
+}
+.SchedualCon button {
+  display: block;
+  font: 1vw;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0, 5px;
+  width: 80px;
+}
+.llabel {
+  margin: 3px;
+}
