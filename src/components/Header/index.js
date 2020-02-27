@@ -4,11 +4,11 @@ function Header() {
   return (
     <div className='header'>
       <img
-        className='imglogo'
+        className='header__logo'
         src='https://www.graphicsprings.com/filestorage/stencils/9ea51687148f4cfb53737a025d94caaa.png?width=500&height=500'
         alt='logo'
       />
-      <h1 className='headp'>Mommy&Me</h1>
+      <h1 className='header__title'>Mommy&Me</h1>
     </div>
   );
 }

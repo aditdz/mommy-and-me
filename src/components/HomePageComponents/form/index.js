@@ -1,104 +1,100 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Style/index.css';
-class Form extends Component {
-  state = {
-    name: '',
-    email: '',
-    feedback: '',
-    show: false
+function Form() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [show, setShow] = useState(false);
+
+  const forName = e => {
+    setName(e.target.value);
   };
-  forInput1 = e => {
-    this.setState({
-      name: e.target.value
-    });
+  const forEmail = event => {
+    setEmail(event.target.value);
   };
-  forInput2 = event => {
-    this.setState({
-      email: event.target.value
-    });
+  const forFeedback = e => {
+    setFeedback(e.target.value);
   };
-  forInput3 = e => {
-    this.setState({
-      feedback: e.target.value
-    });
+  const ourForm = e => {
+    e.preventDefault();
+    setName('');
+    setEmail('');
+    setFeedback('');
+    alert('thankyou!');
   };
-  formm = () => {
-    this.setState({
-      name: '',
-      email: '',
-      feedback: ''
-    });
-  };
-  form1 = () => {
-    const shown = this.state.show;
-    this.setState({
-      show: !shown
-    });
+  const form1 = () => {
+    setShow(!show);
   };
 
-  render() {
-    return (
-      <div className='container'>
-        <button className='button1 row' onClick={this.form1}>
-          Please Submitt your feedback about our site
-        </button>
+  return (
+    <div className='feedback'>
+      <button className='feedback__button feedback--row' onClick={form1}>
+        Please Submitt your feedback about our site
+      </button>
 
-        {this.state.show ? (
-          <div>
-            <form>
-              <div className='row'>
-                {' '}
-                <div className='col-25'>
-                  <label for='name'>Name:</label>
-                </div>{' '}
-                <div className='col-75'>
+      {show ? (
+        <div>
+          &emsp;
+          <form onSubmit={ourForm}>
+            <div className='ourForm'>
+              <div className='feedback--row'>
+                <div className='feedback--col25'>
+                  <label className='nameLabel' htmlFor='name'>
+                    Name:
+                  </label>
+                </div>
+                <div className='feedback--col75'>
                   <input
                     id='name'
-                    onChange={this.forInput1}
+                    onChange={forName}
                     type='text'
                     placeholder='Full Name'
-                    value={this.state.name}
+                    value={name}
                   />
                 </div>
               </div>
-              <div className='row'>
-                <div className='col-25'>
-                  <label for='email'>Email:</label>
+              <div className='feedback--row'>
+                <div className='feedback--col25'>
+                  <label className='emailLabel' htmlFor='email'>
+                    Email:
+                  </label>
                 </div>
-                <div className='col-75'>
+                <div className='feedback--col75'>
                   <input
                     id='email'
-                    onChange={this.forInput2}
+                    onChange={forEmail}
                     type='text'
                     placeholder='Email Adress'
-                    value={this.state.email}
+                    value={email}
                   />
                 </div>
               </div>
 
-              <div className='row'>
-                <div className='col-25'>
-                  <label for='feedback'>Feedback:</label>
+              <div className='feedback--row'>
+                <div className='feedback--col25'>
+                  <label htmlFor='feedback'>Feedback:</label>
                 </div>
-                <div className='col-75'>
-                  <input
-                    className='f-b ii'
+                <div className='feedback--col75'>
+                  <textarea
+                    className='feedback__feedback'
                     id='feedback'
-                    onChange={this.forInput3}
-                    value={this.state.feedback}
+                    onChange={forFeedback}
+                    value={feedback}
                     type='text'
                     placeholder='What is your feedback'
                   />
                 </div>
               </div>
-              <button className='button2 row' onClick={this.formm}>
+            </div>
+            <div className='feedback__button__area'>
+              <button className='feedback__button2 feedback--row'>
                 Submit
               </button>
-            </form>
-          </div>
-        ) : null}
-      </div>
-    );
-  }
+            </div>
+          </form>
+        </div>
+      ) : null}
+    </div>
+  );
 }
 export default Form;

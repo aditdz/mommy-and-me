@@ -1,7 +1,9 @@
-* {
-  box-sizing: border-box;
+.feedback {
+  width: 30%;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 input[type='text'] {
   width: 100%;
   padding: 12px;
@@ -15,8 +17,8 @@ label {
   display: inline-block;
 }
 
-.button1 {
-  background-color: rgb(76, 172, 175);
+.feedback__button {
+  background-color: rgb(12, 201, 106);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -27,30 +29,28 @@ label {
   margin-right: auto;
 }
 
-.button1:hover {
-  background-color: #456ca0;
+.feedback__button:hover {
+  background-color: #16ebce;
+  color: black;
+  font-weight: bold;
+}
+.feedback__feedback {
+  overflow: hidden;
+  resize: vertical;
 }
 
-.container {
-  width: 40%;
-  border-radius: 5px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.col-25 {
+.feedback--col25 {
   float: left;
   margin-top: 6px;
   width: 25%;
 }
 
-.col-75 {
+.feedback--col75 {
   float: left;
   margin-top: 6px;
   width: 75%;
 }
-.button2 {
+.feedback__button2 {
   background-color: rgb(42, 54, 165);
   color: white;
   padding: 12px 20px;
@@ -59,16 +59,16 @@ label {
   cursor: pointer;
   margin-top: 2%;
 }
-.row:after {
+.feedback--row:after {
   content: '';
   display: table;
   clear: both;
 }
 
 @media screen and (max-width: 800px) {
-  .col-25,
-  .col-75,
-  .button1 .button2 {
+  .feedback--col25,
+  .feedback--col75,
+  .feedback__button {
     width: 100%;
     margin-top: 0;
   }

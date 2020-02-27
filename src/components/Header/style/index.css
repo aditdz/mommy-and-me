@@ -2,15 +2,16 @@
   display: grid;
   grid-template-columns: 2fr 7fr;
   grid-column-gap: 20%;
+  background-color: rgb(150, 243, 228);
 }
 
-.imglogo {
+.header__logo {
   width: 100%;
 }
 
-.headp {
+.header__title {
   font-family: 'Sigmar One', cursive;
-  font-size: 7vw;
-
+  font-size: 6vw;
+  margin-top: 6%;
   color: rgb(252, 196, 11);
 }

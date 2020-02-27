@@ -12,7 +12,7 @@ function HomePage() {
       <Centered />
       <Form />
       <Workshops />
-      <br />
+      &emsp; &emsp;
       <Schedual />
     </div>
   );
