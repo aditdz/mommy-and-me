@@ -12,6 +12,7 @@ test('smoke testing Header component', () => {
 test('Shallow rendering Header component', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<Header />);
-  //   console.log(renderedOutput);
+  //   console.log(renderer.getRenderOutput());
+  //   console.log(renderer.getRenderOutput().props.children);
   expect(renderer.getRenderOutput()).toMatchSnapshot();
 });
