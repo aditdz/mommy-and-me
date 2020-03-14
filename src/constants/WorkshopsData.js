@@ -1,4 +1,4 @@
-export const WorkshopsDataText = {
+const WorkshopsDataText = {
   General:
     "Joining a playgroup is a fun way to get baby to experience newthings and for you to get out and make new-mom friends. Playsessions can be formal classes with music, movement, songs andlearning at places such our club's salons and outdoor.",
   Music:

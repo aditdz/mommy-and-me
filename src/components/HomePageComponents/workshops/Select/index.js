@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Select from 'react-select';
-
+import './style/index.css';
 const options = [
   { value: 'Music', label: 'Music' },
   { value: 'Yoga', label: 'Yoga' },
   { value: 'Swimming', label: 'Swimming' }
 ];
 
-class SelectWorkshop extends Component {
-  render() {
-    return (
-      <div className='container'>
-        <Select
-          value={this.props.value}
-          onChange={this.props.change}
-          options={options}
-        />
-      </div>
-    );
-  }
-}
+const SelectWorkshop = props => {
+  return (
+    <div className='container'>
+      <Select value={props.value} onChange={props.change} options={options} />
+    </div>
+  );
+};
 
 export default SelectWorkshop;

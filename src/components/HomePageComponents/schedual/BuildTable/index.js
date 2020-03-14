@@ -1,12 +1,13 @@
 import React from 'react';
 import Table from './table';
 import './style/index.css';
+import workshops from '../../../../constants/Workshops';
 
 const BuildTable = props => {
   let transformedclasses = Object.keys(props.classes)
     .map(clas => {
       return [...Array(props.classes[clas])].map((_, i) => {
-        return <Table key={clas + i} type={clas} />;
+        return <Table key={clas + i} data={workshops[clas]} />;
       });
     })
     .reduce((arr, el) => {
@@ -15,10 +16,18 @@ const BuildTable = props => {
   if (transformedclasses.length === 0) {
     transformedclasses = <p>Please start adding your favorite classes</p>;
   }
+
   return (
     <div className='doS'>
-      <Table type='nothing' />
-      {transformedclasses}
+      <table>
+        <tr>
+          <td>WorkshopName</td>
+          <td>Day</td>
+          <td>Hour</td>
+          <td>StartDay</td>
+        </tr>
+        {transformedclasses}
+      </table>
     </div>
   );
 };
