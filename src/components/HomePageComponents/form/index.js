@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Style/index.css';
+import { request } from '../../../config/ajax';
+
 function Form() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,10 +19,22 @@ function Form() {
   };
   const ourForm = e => {
     e.preventDefault();
-    setName('');
-    setEmail('');
-    setFeedback('');
-    alert('thankyou!');
+    const body = {
+      name,
+      email,
+      feedback
+    };
+    request('/feedbacks', 'POST', body).then(response => {
+      console.log('response', response);
+      if (response === 201) {
+        setName('');
+        setEmail('');
+        setFeedback('');
+        alert('thankyou!');
+      } else {
+        alert('Error!');
+      }
+    });
   };
   const form1 = () => {
     setShow(!show);
