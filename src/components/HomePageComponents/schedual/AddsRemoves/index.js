@@ -2,15 +2,15 @@ import React from 'react';
 import './style/index.css';
 import AddRemove from './addRemove';
 const controls = [
-  { label: 'Music', type: 'Music' },
-  { label: 'Yoga', type: 'Yoga' },
-  { label: 'Swimming', type: 'Swimming' }
+  { label: <p className='label1'>Music</p>, type: 'Music' },
+  { label: <p className='label2'>Yoga</p>, type: 'Yoga' },
+  { label: <p className='label3'>Swimming</p>, type: 'Swimming' },
 ];
-const AddsRemoves = props => {
+const AddsRemoves = (props) => {
   return (
     <div className='SchedualCons'>
-      <h4>Total price:{props.price}$</h4>
-      {controls.map(cntr => {
+      <h4 className='price'>Total price:{props.price}$</h4>
+      {controls.map((cntr) => {
         return (
           <AddRemove
             remove={() => props.remove(cntr.type)}

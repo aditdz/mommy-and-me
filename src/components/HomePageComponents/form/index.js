@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Style/index.css';
 import { request } from '../../../config/ajax';
+import { Button } from '@material-ui/core';
 
 function Form() {
   const [name, setName] = useState('');
@@ -8,29 +9,29 @@ function Form() {
   const [feedback, setFeedback] = useState('');
   const [show, setShow] = useState(false);
 
-  const forName = e => {
+  const forName = (e) => {
     setName(e.target.value);
   };
-  const forEmail = event => {
+  const forEmail = (event) => {
     setEmail(event.target.value);
   };
-  const forFeedback = e => {
+  const forFeedback = (e) => {
     setFeedback(e.target.value);
   };
-  const ourForm = e => {
+  const ourForm = (e) => {
     e.preventDefault();
     const body = {
       name,
       email,
-      feedback
+      feedback,
     };
-    request('/feedbacks', 'POST', body).then(response => {
+    request('/feedbacks', 'POST', body).then((response) => {
       console.log('response', response);
       if (response === 201) {
         setName('');
         setEmail('');
         setFeedback('');
-        alert('thankyou!');
+        alert('thankyou');
       } else {
         alert('Error!');
       }
@@ -41,73 +42,77 @@ function Form() {
   };
 
   return (
-    <div className='feedback'>
-      <button className='feedback__button feedback--row' onClick={form1}>
-        Please Submitt your feedback about our site
-      </button>
+    <div className='total'>
+      <div className='feedback'>
+        {/* <button className='feedback__button feedback--row' onClick={form1}>
+          Please Submitt your feedback about our site
+        </button> */}
+        <Button onClick={form1} variant='contained' color='primary'>
+          Please Submitt your feedback about our site
+        </Button>
+        {show ? (
+          <div>
+            &emsp;
+            <form onSubmit={ourForm}>
+              <div className='ourForm'>
+                <div className='feedback--row'>
+                  <div className='feedback--col25'>
+                    <label className='nameLabel' htmlFor='name'>
+                      Name:
+                    </label>
+                  </div>
+                  <div className='feedback--col75'>
+                    <input
+                      id='name'
+                      onChange={forName}
+                      type='text'
+                      placeholder='Full Name'
+                      value={name}
+                    />
+                  </div>
+                </div>
+                <div className='feedback--row'>
+                  <div className='feedback--col25'>
+                    <label className='emailLabel' htmlFor='email'>
+                      Email:
+                    </label>
+                  </div>
+                  <div className='feedback--col75'>
+                    <input
+                      id='email'
+                      onChange={forEmail}
+                      type='text'
+                      placeholder='Email Adress'
+                      value={email}
+                    />
+                  </div>
+                </div>
 
-      {show ? (
-        <div>
-          &emsp;
-          <form onSubmit={ourForm}>
-            <div className='ourForm'>
-              <div className='feedback--row'>
-                <div className='feedback--col25'>
-                  <label className='nameLabel' htmlFor='name'>
-                    Name:
-                  </label>
-                </div>
-                <div className='feedback--col75'>
-                  <input
-                    id='name'
-                    onChange={forName}
-                    type='text'
-                    placeholder='Full Name'
-                    value={name}
-                  />
+                <div className='feedback--row'>
+                  <div className='feedback--col25'>
+                    <label htmlFor='feedback'>Feedback:</label>
+                  </div>
+                  <div className='feedback--col75'>
+                    <textarea
+                      className='feedback__feedback'
+                      id='feedback'
+                      onChange={forFeedback}
+                      value={feedback}
+                      type='text'
+                      placeholder='What is your feedback'
+                    />
+                  </div>
                 </div>
               </div>
-              <div className='feedback--row'>
-                <div className='feedback--col25'>
-                  <label className='emailLabel' htmlFor='email'>
-                    Email:
-                  </label>
-                </div>
-                <div className='feedback--col75'>
-                  <input
-                    id='email'
-                    onChange={forEmail}
-                    type='text'
-                    placeholder='Email Adress'
-                    value={email}
-                  />
-                </div>
+              <div className='feedback__button__area'>
+                <button className='feedback__button2 feedback--row'>
+                  Submit
+                </button>
               </div>
-
-              <div className='feedback--row'>
-                <div className='feedback--col25'>
-                  <label htmlFor='feedback'>Feedback:</label>
-                </div>
-                <div className='feedback--col75'>
-                  <textarea
-                    className='feedback__feedback'
-                    id='feedback'
-                    onChange={forFeedback}
-                    value={feedback}
-                    type='text'
-                    placeholder='What is your feedback'
-                  />
-                </div>
-              </div>
-            </div>
-            <div className='feedback__button__area'>
-              <button className='feedback__button2 feedback--row'>
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      ) : null}
+            </form>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

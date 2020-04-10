@@ -1,16 +1,14 @@
 .SchedualCon {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
   margin: 5px 0;
-  text-align: center;
 }
 .SchedualCon button {
   display: block;
   font: 1vw;
   cursor: pointer;
-  padding: 5px;
+  padding: 1px;
   margin: 0, 5px;
   width: 80px;
 }

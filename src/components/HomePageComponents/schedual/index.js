@@ -6,7 +6,7 @@ import AddsRemoves from './AddsRemoves';
 const PRICES = {
   Music: 25,
   Yoga: 30,
-  Swimming: 40
+  Swimming: 40,
 };
 
 class Schedual extends Component {
@@ -14,13 +14,13 @@ class Schedual extends Component {
     classes: {
       Music: 0,
       Yoga: 0,
-      Swimming: 0
+      Swimming: 0,
     },
     price: 0,
-    registrable: false
+    registrable: false,
   };
 
-  addClasses = type => {
+  addClasses = (type) => {
     const oldclass = this.state.classes[type];
     const updateclass = oldclass + 1;
     const updated = { ...this.state.classes };
@@ -28,10 +28,10 @@ class Schedual extends Component {
     const newprice = this.state.price + PRICES[type];
     this.setState({
       classes: updated,
-      price: newprice
+      price: newprice,
     });
   };
-  removeClasses = type => {
+  removeClasses = (type) => {
     const oldclass = this.state.classes[type];
     if (oldclass <= 0) {
       return;
@@ -42,7 +42,7 @@ class Schedual extends Component {
     const newprice = this.state.price - PRICES[type];
     this.setState({
       classes: updated,
-      price: newprice
+      price: newprice,
     });
   };
   registrable = () => {
@@ -50,15 +50,15 @@ class Schedual extends Component {
       classes: {
         Music: 0,
         Yoga: 0,
-        Swimming: 0
+        Swimming: 0,
       },
-      price: 0
+      price: 0,
     });
   };
   render() {
     return (
       <div>
-        <h3>Make your own Schedual</h3>
+        <h2>Make your own Schedual</h2>
         <div className='Table'>
           <BuildTable classes={this.state.classes} />
         </div>

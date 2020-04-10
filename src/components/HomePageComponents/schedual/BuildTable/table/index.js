@@ -7,7 +7,7 @@ function Table(props) {
       <td>{data.WorkshopName}</td>
       <td>{data.Day}</td>
       <td>{data.Hour}</td>
-      <td>{data.StartDay}</td>
+      <td>{data.StartDate}</td>
     </tr>
   );
 }

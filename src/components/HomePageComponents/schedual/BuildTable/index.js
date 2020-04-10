@@ -3,9 +3,9 @@ import Table from './table';
 import './style/index.css';
 import workshops from '../../../../constants/Workshops';
 
-const BuildTable = props => {
+const BuildTable = (props) => {
   let transformedclasses = Object.keys(props.classes)
-    .map(clas => {
+    .map((clas) => {
       return [...Array(props.classes[clas])].map((_, i) => {
         return <Table key={clas + i} data={workshops[clas]} />;
       });
@@ -24,7 +24,7 @@ const BuildTable = props => {
           <td>WorkshopName</td>
           <td>Day</td>
           <td>Hour</td>
-          <td>StartDay</td>
+          <td>StartDate</td>
         </tr>
         {transformedclasses}
       </table>
