@@ -5,6 +5,9 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
     right: 0,
     padding: 12,
+    [theme.breakpoints.down('sm')]: {
+      width: '83vw',
+    },
   },
   searchTextField: {
     outline: 'none',

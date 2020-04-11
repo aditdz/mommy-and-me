@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paper, Grid } from '@material-ui/core';
+import { Paper, Grid, Hidden } from '@material-ui/core';
 import useStyles from './styles/index.style';
 import Menu from './Menu';
 import SearchIcon from '@material-ui/icons/SearchRounded';
@@ -20,9 +20,11 @@ export default function Header() {
             alt='logo'
           />
         </Grid>
-        <Grid item>
-          <Menu />
-        </Grid>
+        <Hidden smDown>
+          <Grid item>
+            <Menu />
+          </Grid>
+        </Hidden>
         <Grid item className={classes.searchBoxItem}>
           <div
             className={classes.searchIconBox}

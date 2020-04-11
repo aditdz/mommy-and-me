@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   rootPaper: {
-    padding: 16,
+    padding: '0 16px',
+    zIndex: 1,
   },
   logo: {
     height: 100,

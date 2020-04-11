@@ -4,7 +4,7 @@ import SelectWorkshop from './Select';
 import WorkshopsDataText from '../../../constants/WorkshopsData';
 function Workshops() {
   const [value, setValue] = useState('');
-  const handle = event => {
+  const handle = (event) => {
     setValue(event);
   };
 
