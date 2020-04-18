@@ -7,8 +7,6 @@ import Schedual from '../../components/HomePageComponents/schedual';
 function HomePage() {
   return (
     <div>
-      <br />
-      &emsp;
       <Centered />
       <Form />
       <Workshops />

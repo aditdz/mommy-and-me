@@ -1,11 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   rootPaper: {
-    padding: '0 16px',
+    padding: '0 20px',
+    border: 0,
     zIndex: 1,
   },
   logo: {
-    height: 100,
+    height: 90,
+    marginBottom: 0,
   },
   searchIcon: {
     color: 'white',

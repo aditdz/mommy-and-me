@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paper, Grid, Hidden } from '@material-ui/core';
+import { Paper, Grid, Hidden, colors } from '@material-ui/core';
 import useStyles from './styles/index.style';
 import Menu from './Menu';
 import SearchIcon from '@material-ui/icons/SearchRounded';
@@ -19,6 +19,9 @@ export default function Header() {
             src='https://www.graphicsprings.com/filestorage/stencils/9ea51687148f4cfb53737a025d94caaa.png?width=500&height=500'
             alt='logo'
           />
+          <h1 style={{ fontFamily: 'Sigmar One', color: '#f00', margin: '0' }}>
+            Mommy & Me
+          </h1>
         </Grid>
         <Hidden smDown>
           <Grid item>
