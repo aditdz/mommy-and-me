@@ -1,41 +1,17 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import useStyles from './styles/Menu.style';
-
+const menuText = ['Home', 'Blog', 'Shop', 'Pictures', 'About Us', 'Contact Us'];
 export default function HeaderMenu() {
   const classes = useStyles();
-  return (
-    <Grid container>
+  let menue = menuText.map((item) => {
+    return (
       <Grid item className={classes.menuItem}>
         <Typography variant='button' className={classes.menuItemText}>
-          Home
+          {item}
         </Typography>
       </Grid>
-      <Grid item className={classes.menuItem}>
-        <Typography variant='button' className={classes.menuItemText}>
-          Blog
-        </Typography>
-      </Grid>
-      <Grid item className={classes.menuItem}>
-        <Typography variant='button' className={classes.menuItemText}>
-          Shop
-        </Typography>
-      </Grid>
-      <Grid item className={classes.menuItem}>
-        <Typography variant='button' className={classes.menuItemText}>
-          Pictures
-        </Typography>
-      </Grid>
-      <Grid item className={classes.menuItem}>
-        <Typography variant='button' className={classes.menuItemText}>
-          About Us
-        </Typography>
-      </Grid>
-      <Grid item className={classes.menuItem}>
-        <Typography variant='button' className={classes.menuItemText}>
-          Contact Us
-        </Typography>
-      </Grid>
-    </Grid>
-  );
+    );
+  });
+  return <Grid container> {menue}</Grid>;
 }
