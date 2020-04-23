@@ -7,12 +7,12 @@ const useStyles = makeStyles((theme) => ({
     padding: 12,
     [theme.breakpoints.down('sm')]: {
       width: '83vw',
+      border: 'none',
     },
   },
   searchTextField: {
     outline: 'none',
     border: 'none',
-    flex: 1,
   },
   searchBoxTextFielBox: {
     padding: 12,

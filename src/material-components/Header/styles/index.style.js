@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   rootPaper: {
-    padding: '0 20px',
+    padding: '0 200px',
     border: 0,
     zIndex: 1,
   },

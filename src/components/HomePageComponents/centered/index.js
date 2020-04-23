@@ -1,11 +1,13 @@
 import React from 'react';
-import './Style/index.css';
+import useStyles from './Style/index.style';
 import WorkshopsDataText from '../../../constants/WorkshopsData';
 
 const Centered = () => {
+  const classes = useStyles();
+
   return (
-    <div className='center'>
-      <div className='photodiv'>
+    <div className={classes.center}>
+      <div className={classes.photodiv}>
         <div className='phototitle'>
           {' '}
           <h1>Learn & Play</h1>
@@ -27,9 +29,18 @@ const Centered = () => {
           ></path>
         </svg>
       </div>
-
       <div>
-        <p className='center__text'>{WorkshopsDataText['General']}</p>
+        Icons made by{' '}
+        <a href='https://www.flaticon.com/authors/freepik' title='Freepik'>
+          Freepik
+        </a>{' '}
+        from{' '}
+        <a href='https://www.flaticon.com/' title='Flaticon'>
+          www.flaticon.com
+        </a>
+      </div>
+      <div>
+        <p className={classes.center__text}>{WorkshopsDataText['General']}</p>
       </div>
     </div>
   );

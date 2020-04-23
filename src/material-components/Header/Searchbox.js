@@ -20,7 +20,11 @@ export default function SearchBox(props) {
   }, []);
 
   return (
-    <Paper className={classes.rootPaper} ref={(node) => (searchBoxRef = node)}>
+    <Paper
+      container
+      className={classes.rootPaper}
+      ref={(node) => (searchBoxRef = node)}
+    >
       <Grid
         container
         justify='space-between'
@@ -28,8 +32,8 @@ export default function SearchBox(props) {
       >
         <input
           className={classes.searchTextField}
-          placeholder='Search ...'
           autoFocus
+          placeholder='Search ...'
         />
         <SearchIcon />
       </Grid>
